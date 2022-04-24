@@ -18,18 +18,6 @@ provider "digitalocean" {
   }
 }
 
-provider "aws" {
-  region = var.region
-  default_tags {
-    tags = {
-      Owner       = "crackercloud"
-      Project     = var.project
-      Environment = var.environment
-    }
-  }
-}
-
-
 resource "aws_vpc" "diamond_dogs" {
   cidr_block           = var.address_space
   enable_dns_hostnames = true
